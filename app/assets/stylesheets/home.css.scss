@@ -1,3 +1,39 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+html { 
+  background: url(/images/cheep.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+
+.page-wrap {
+  width: 400px; 
+  margin: 50px auto; 
+  padding: 20px; 
+  background: white; 
+  -moz-box-shadow: 0 0 20px black; 
+  -webkit-box-shadow: 0 0 20px black; 
+  box-shadow: 0 0 20px black; 
+}
+
+.logo {
+  width: 90%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto; 
+}
+
+.text {
+  width: 400px;
+}
+
+.field {
+  
+}
+.actions{
+  
+}
