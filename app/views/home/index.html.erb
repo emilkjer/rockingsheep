@@ -1,0 +1,36 @@
+<%= stylesheet_link_tag "main" %>
+
+<div class='page-wrap'>
+
+<%= image_tag '/images/logo.png', :class=>'logo'%>
+<br />
+
+Rokkefåret er et unikt håndlavet produkt. 
+Hvis du vil vide mere om rokkefåret så 
+skriv din email addresse for neden og jeg vil kontakte dig snarreset.
+
+
+<%= form_for(@interested) do |f| %>
+    <% if @interested.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@interested.errors.count, "error") %> prohibited this group from being saved:</h2>
+
+          <ul>
+            <% @interested.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+    
+    <div class="field">
+      <%= f.label :email %><br />
+      <%= f.text_field :email %>
+    </div>
+    
+    <div class="actions">
+      <%= f.submit %>
+    </div>	
+<% end %>
+    
+</div>

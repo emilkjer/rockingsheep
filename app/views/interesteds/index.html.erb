@@ -1,0 +1,25 @@
+<h1>Listing interesteds</h1>
+
+<table>
+  <tr>
+    <th>Email</th>
+    <th>Ip</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @interesteds.each do |interested| %>
+  <tr>
+    <td><%= interested.email %></td>
+    <td><%= interested.ip %></td>
+    <td><%= link_to 'Show', interested %></td>
+    <td><%= link_to 'Edit', edit_interested_path(interested) %></td>
+    <td><%= link_to 'Destroy', interested, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Interested', new_interested_path %>
