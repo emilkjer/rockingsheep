@@ -13,24 +13,29 @@ Hvis du vil vide mere om rokkefåret og hvordan du får fat i det
 så skriv din email addresse for neden og jeg vil kontakte dig snarreset.
 </>
 
+    
+
 <%= form_for(@interested, :defaults => { :input_html => { :class => "getemail" } }) do |f| %>
-<div id="errors">
-    <% if @interested.errors.any? %>
-        <div id="error_explanation">
-          <h2><%= pluralize(@interested.errors.count, "error") %> prohibited this group from being saved:</h2>
+
+<% if flash[:notice] %>
+  <p class="notice"><%= flash[:notice] %></p>
+<% end %>
+
+
+<% if @interested.errors.any? %>
+        <div id="errorExplanation">
+          <h2>Beklager der er <%= pluralize(@interested.errors.count, "fejl") %>:</h2>
           <ul>
             <% @interested.errors.full_messages.each do |msg| %>
                 <li><%= msg %></li>
             <% end %>
           </ul>
         </div>
-    <% end %>
-    </div>
-
+<% end %>
 	
     <div class="noshadow">
       <%= f.label "Skriv din email her:" %><br />
-      <%= f.text_field :email, :id=>'email_field' %>
+      <%= f.text_field :email_address, :id=>'email_field' %>
     </div>
     <div class="actions noshadow">
       <%= f.submit "kontakt mig"%>

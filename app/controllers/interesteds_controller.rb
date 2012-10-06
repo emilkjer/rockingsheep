@@ -45,10 +45,15 @@ class InterestedsController < ApplicationController
 
     respond_to do |format|
       if @interested.save
-        format.html { redirect_to @interested, notice: 'Interested was successfully created.' }
+        # format.html { re :template => "home/index", notice: 'Interested was successfully created.' }
+        format.html { redirect_to :controller => "home", :action => "index", 
+          :notice => 'Tak vi kontakter dem snarrest.' }
+        # format.html { redirect_to @interested, notice: 'Interested was successfully created.' }
         format.json { render json: @interested, status: :created, location: @interested }
       else
-        format.html { render action: "new" }
+        # format.html { render action: "new" }
+        # format.html { redirect_to :controller => "home", :action => "index"}
+        format.html { render :template => "home/index"}
         format.json { render json: @interested.errors, status: :unprocessable_entity }
       end
     end
