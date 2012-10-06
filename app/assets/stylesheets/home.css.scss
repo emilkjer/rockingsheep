@@ -10,14 +10,17 @@ html {
 }
 
 .page-wrap {
-  position:absolute;
-  width: 400px; 
-  margin: 50px auto; 
+  //Size
+  width: 400px;
   padding: 10px;
-  top: 8%;
-  left: 5%;
-  // margin-left: auto;
-  // margin-right: auto; 
+  
+  //Position
+  top: 8%;  
+  position:absolute;
+  left: 50%; /* centers #box in its containing element */
+  margin-left: -15%; /* half the element's width (30%) */   
+
+  //Look
   background: white;
   -moz-box-shadow: 0 0 20px black; 
   -webkit-box-shadow: 0 0 20px black; 
@@ -40,15 +43,12 @@ html {
 }
 
 #email_field {
-  // margin: 10px auto;
   width: 95%;
   padding: 5px;
   height: 20px; 
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   border-radius: 10px;
-  
-  // filter
 }
 
 input[type="submit"]
