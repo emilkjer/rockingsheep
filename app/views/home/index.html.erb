@@ -1,20 +1,23 @@
-
-
 <div class='page-wrap'>
-
 <%= image_tag '/images/logo.png', :class=>'logo'%>
-<br />
 
-Rokkefåret er et unikt håndlavet produkt. 
-Hvis du vil vide mere om rokkefåret så 
-skriv din email addresse for neden og jeg vil kontakte dig snarreset.
+<p>
+Rokkefåret er et unikt håndlavet produkt lavet af de bedste
+materialer og hådplukkede skind fra Danmark, Norge og Island.
+Jeg laver dem i mit lille værksted i Ry og nyder hver gang
+et nyt får er færdigt.
 
+</p>
+<p> 
+Hvis du vil vide mere om rokkefåret og hvordan du får fat i det
+så skriv din email addresse for neden og jeg vil kontakte dig snarreset.
+</>
 
-<%= form_for(@interested) do |f| %>
+<%= form_for(@interested, :defaults => { :input_html => { :class => "getemail" } }) do |f| %>
+<div id="errors">
     <% if @interested.errors.any? %>
         <div id="error_explanation">
           <h2><%= pluralize(@interested.errors.count, "error") %> prohibited this group from being saved:</h2>
-
           <ul>
             <% @interested.errors.full_messages.each do |msg| %>
                 <li><%= msg %></li>
@@ -22,15 +25,25 @@ skriv din email addresse for neden og jeg vil kontakte dig snarreset.
           </ul>
         </div>
     <% end %>
-    
-    <div class="field">
-      <%= f.label :email %><br />
-      <%= f.text_field :email %>
+    </div>
+
+	
+    <div class="noshadow">
+      <%= f.label "Skriv din email her:" %><br />
+      <%= f.text_field :email, :id=>'email_field' %>
     </div>
     
-    <div class="actions">
-      <%= f.submit %>
-    </div>	
-<% end %>
     
+    <div class="actions noshadow">
+      <%= f.submit "kontakt mig"%>
+    </div>
+    
+<% end %>
+
 </div>
+
+
+<!-- <div id="menu">
+	<h1>blah something more</h1>
+	<div>&nbsp;	</div>
+</div> -->
